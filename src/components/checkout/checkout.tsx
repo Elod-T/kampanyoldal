@@ -85,7 +85,7 @@ export default function Checkout() {
 
   return (
     <div
-      className="absolute top-10 right-0 bg-#f1f1f1 text-black p-10 rounded-60px w-sm"
+      className="absolute top-10 md:right-0 bg-#f1f1f1 text-black p-10 rounded-t-60px md:rounded-60px w-90vw -right-10 md:w-sm"
       ref={modalRef}
     >
       {showConfetti && (
