@@ -3,8 +3,8 @@ import Arrow from "../assets/graphics/arrow.svg";
 
 export default function AboutUs() {
   return (
-    <section className="custom-container mt-50 lg:flex gap-x-100">
-      <div className="mt-20 mx-auto w-fit lg:mx-0">
+    <section className="custom-container mt-50 xl:flex gap-x-100">
+      <div className="mt-20 mx-auto w-fit lg:mx-0 relative xl:left-20">
         <div className="relative">
           <p className="text-brand-red font-bold">Rólunk</p>
 

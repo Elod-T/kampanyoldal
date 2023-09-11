@@ -5,7 +5,7 @@ import ExclamationPoint from "../../assets/graphics/exclamation-point.svg";
 
 export default function Products() {
   return (
-    <section className="custom-container mt-150 lg:mt-100">
+    <section className="custom-container mt-150 xl:mt-100">
       <div className="mx-auto w-fit mb-20 mt-32 to-reveal reveal-up">
         <h3
           id="products"

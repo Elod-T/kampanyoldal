@@ -37,7 +37,7 @@ export default function Introduction() {
   }, [classmates, isFlipped]);
 
   return (
-    <div className="relative lg:mt-10 mx-auto lg:mx-0">
+    <div className="relative top-10 md:left-40 lg:left-0 xl:right-20 xl:top-0">
       <ReactCardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"

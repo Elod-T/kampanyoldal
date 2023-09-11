@@ -10,11 +10,17 @@ export default function Navbar() {
         </a>
 
         <div className="flex gap-x-5 items-center">
-          <a href="#aboutus" className="text-white no-underline">
+          <a
+            href="#aboutus"
+            className="text-white no-underline hidden md:block"
+          >
             Rólunk
           </a>
 
-          <a href="#products" className="text-white no-underline">
+          <a
+            href="#products"
+            className="text-white no-underline hidden md:block"
+          >
             Termékeink
           </a>
 
