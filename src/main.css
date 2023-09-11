@@ -1,0 +1,52 @@
+:root {
+  --delay: 0ms;
+  --reveal-distance: 150px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .to-reveal {
+    opacity: 0;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+    transition-delay: var(--delay);
+    filter: blur(5px);
+  }
+
+  .reveal-up {
+    transform: translate3d(0, var(--reveal-distance), 0);
+  }
+
+  .reveal-down {
+    transform: translate3d(0, calc(-1 * var(--reveal-distance)), 0);
+  }
+
+  .reveal-left {
+    transform: translate3d(calc(-1 * var(--reveal-distance)), 0, 0);
+  }
+
+  .reveal-right {
+    transform: translate3d(var(--reveal-distance), 0, 0);
+  }
+
+  .reveal-rotate-right {
+    transform: rotate(90deg);
+  }
+
+  .revealed {
+    opacity: 100;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .break-line::after {
+    content: "\a";
+    white-space: pre;
+  }
+}
