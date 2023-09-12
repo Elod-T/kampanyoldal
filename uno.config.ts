@@ -10,8 +10,10 @@ export default defineConfig({
   shortcuts: {
     "custom-container":
       "mx-auto w-screen w-350px xs:w-400px sm:w-620px md:w-760px mg:w-800px lg:w-900px xl:w-1100px 2xl:w-1280px",
-    btn: "py-2 px-5 md:px-10 rounded-full font-bold border-0 hover:bg-opacity-80 active:bg-opacity-100 cursor-pointer disabled:bg-gray disabled:cursor-not-allowed no-underline",
+    btn: "py-2 px-5 md:px-10 rounded-full font-bold border-0 hover:bg-opacity-80 active:bg-opacity-100 cursor-pointer disabled:bg-gray disabled:cursor-not-allowed no-underline duration-300",
     "btn-red": "bg-brand-red text-white font-pirata tracking-wide",
+    "radio-btn":
+      "appearance-none w-4 h-4 m-0 bg-truegray-700 rounded-full checked:bg-truegray-300 relative top-0.5",
   },
 
   theme: {
