@@ -118,15 +118,15 @@ export default function Card({ product }: { product: Product | Bundle }) {
         />
       )}
 
-      {product.name === "Kampánypóló" && (
+      {["Kampánypóló", "Kampánypulcsi"].includes(product.name) && (
         <div className="mt-4 flex gap-x-4 mx-auto w-fit">
           {tshirtSizes.map((size) => (
-            <div key={size}>
-              <label htmlFor={size}>{size}</label>
+            <div key={`${product.id}-${size}`}>
+              <label htmlFor={`${product.id}-${size}`}>{size}</label>
               <input
                 className="radio-btn ml-2"
                 type="radio"
-                name={size}
+                name={`${product.id}-${size}`}
                 checked={size == tshirtSize}
                 onClick={handleSizeSelect.bind(null, size)}
               />
@@ -151,8 +151,6 @@ export default function Card({ product }: { product: Product | Bundle }) {
           ))}
         </div>
       )}
-
-      {product.name === "Kampánypulcsi" && <div className="h-8"></div>}
 
       <button
         className="btn mt-10 hover:bg-truegray-400 hover:text-white"
