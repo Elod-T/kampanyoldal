@@ -1,4 +1,3 @@
-import Placeholder from "./assets/placeholder.png";
 import TShirtVideo from "./assets/tshirt.mp4";
 import Bandana from "./assets/bandana.png";
 import Pulcsi from "./assets/pulcsi.png";
