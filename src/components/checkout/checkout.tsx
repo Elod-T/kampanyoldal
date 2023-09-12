@@ -3,6 +3,12 @@ import { FORM_POST_URL, FORM_INPUT_IDS } from "../../consts";
 import { useRef, useState } from "react";
 import type { Item } from "react-use-cart";
 import Confetti from "react-confetti";
+import {
+  tshirtSizeLocalStoreKey,
+  bandanaColorLocalStoreKey,
+} from "../../consts";
+import type { tshirtSizes, bandanaColors } from "../../consts";
+import { useLocalStorage } from "usehooks-ts";
 
 export default function Checkout() {
   const [canOrder, setCanOrder] = useState(false);
@@ -17,6 +23,15 @@ export default function Checkout() {
   const tshirts = items.filter((item) => item.id === "1")[0]?.quantity ?? 0;
   const hoodies = items.filter((item) => item.id === "2")[0]?.quantity ?? 0;
   const bandanas = items.filter((item) => item.id === "3")[0]?.quantity ?? 0;
+
+  const [tshirtSize] = useLocalStorage<(typeof tshirtSizes)[0]>(
+    tshirtSizeLocalStoreKey,
+    "M"
+  );
+  const [bandanaColor] = useLocalStorage<(typeof bandanaColors)[0]>(
+    bandanaColorLocalStoreKey,
+    "fekete"
+  );
 
   const getTotalDiscount = () => {
     let totalDiscount = 0;
@@ -185,6 +200,20 @@ export default function Checkout() {
             type="text"
             name={FORM_INPUT_IDS.bandanas}
             defaultValue={bandanas}
+          />
+          <input
+            className="hidden"
+            type="text"
+            name={FORM_INPUT_IDS.tshirtSize}
+            value={tshirtSize}
+            readOnly
+          />
+          <input
+            className="hidden"
+            type="text"
+            name={FORM_INPUT_IDS.bandanaColor}
+            value={bandanaColor}
+            readOnly
           />
 
           <div onClick={handleCanOrder}>
