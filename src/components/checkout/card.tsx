@@ -118,8 +118,13 @@ export default function Card({ product }: { product: Product | Bundle }) {
         />
       )}
 
-      {["Kampánypóló", "Kampánypulcsi"].includes(product.name) && (
-        <div className="mt-4 flex gap-x-4 mx-auto w-fit">
+      {[
+        "Kampánypóló",
+        "Kampánypulcsi",
+        "Kezdő kalóz szett",
+        "Teljes kalóz szett",
+      ].includes(product.name) && (
+        <div className="mt-5 flex gap-x-4 mx-auto w-fit">
           {tshirtSizes.map((size) => (
             <div key={`${product.id}-${size}`}>
               <label htmlFor={`${product.id}-${size}`}>{size}</label>
