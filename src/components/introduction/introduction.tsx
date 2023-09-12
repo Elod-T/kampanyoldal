@@ -31,7 +31,7 @@ export default function Introduction() {
 
     const interval = setInterval(() => {
       handleFlip();
-    }, 5000);
+    }, 7500);
 
     return () => clearInterval(interval);
   }, [classmates, isFlipped]);
