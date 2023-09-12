@@ -14,6 +14,12 @@ export default function Footer() {
           Sziasztok, mi vagyunk Ákos és a 12.B osztály. Tartsatok velünk az idei
           TN-en egy felejthetetlen kalandra!
         </p>
+
+        <p className="text-.65rem mt-1 max-w-md">
+          Az oldal csak igényfelmérés céljából készült, valós tranzakciót nem
+          jelent. A termékek árát személyesen kell fizetni az iskolában a 12.B
+          osztály bármely tagjának szeptember 20-ig.
+        </p>
       </div>
 
       <div className="flex justify-between text-sm mt-20 px-10">
