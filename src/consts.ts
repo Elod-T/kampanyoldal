@@ -247,7 +247,7 @@ export const CLASSMATES = [
     name: "Kiss Ildikó",
     description:
       "Csupaszív osztályfőnökünk. Vigyázzatok vele, mert nem most jött le a falvédőről.",
-    image: Placeholder,
+    image: "/photos/kiss-ildiko.webp",
   },
   {
     name: "Cápák",
