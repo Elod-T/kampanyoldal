@@ -17,8 +17,14 @@ export default function Checkout() {
 
   const [buttonText, setButtonText] = useState("Rendelés");
   const [showConfetti, setShowConfetti] = useState(false);
-  const { items, cartTotal, totalItems, updateItemQuantity, removeItem } =
-    useCart();
+  const {
+    items,
+    cartTotal,
+    totalItems,
+    updateItemQuantity,
+    removeItem,
+    clearCartMetadata,
+  } = useCart();
 
   const tshirts = items.filter((item) => item.id === "1")[0]?.quantity ?? 0;
   const hoodies = items.filter((item) => item.id === "2")[0]?.quantity ?? 0;
@@ -80,6 +86,7 @@ export default function Checkout() {
 
   const handleOrderFinished = () => {
     setShowConfetti(true);
+    clearCartMetadata();
 
     setTimeout(() => {
       setShowConfetti(false);
