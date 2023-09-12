@@ -1,7 +1,14 @@
 import { useCart } from "react-use-cart";
-import { PRODUCTS } from "../../consts";
+import {
+  PRODUCTS,
+  tshirtSizes,
+  tshirtSizeLocalStoreKey,
+  bandanaColors,
+  bandanaColorLocalStoreKey,
+} from "../../consts";
 import type { Product, Bundle } from "../../consts";
 import { useRef } from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 const ANIMATION_DURATION = 750;
 
@@ -15,12 +22,20 @@ const withQuantity = (product: Product | Bundle) => {
 export default function Card({ product }: { product: Product | Bundle }) {
   const { addItem } = useCart();
 
+  const [tshirtSize, setTshirtSize] = useLocalStorage<(typeof tshirtSizes)[0]>(
+    tshirtSizeLocalStoreKey,
+    "M"
+  );
+  const [bandanaColor, setBandanaColor] = useLocalStorage<
+    (typeof bandanaColors)[0]
+  >(bandanaColorLocalStoreKey, "fekete");
+
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleAddItem = () => {
     if ("contents" in product) {
       product.contents.forEach((productId) => {
-        const product = PRODUCTS.find((p) => p.id === productId.toString());
+        const product = PRODUCTS.find((p) => p.id === productId);
 
         if (!product) {
           return;
@@ -71,6 +86,10 @@ export default function Card({ product }: { product: Product | Bundle }) {
     }, ANIMATION_DURATION);
   };
 
+  const handleSizeSelect = (size: (typeof tshirtSizes)[0]) => {
+    setTshirtSize(size);
+  };
+
   return (
     <div className="max-w-full text-center bg-dark-gray p-5 rounded-30px to-reveal reveal-up">
       <h3 className="text-xl">{product.name}</h3>
@@ -99,8 +118,44 @@ export default function Card({ product }: { product: Product | Bundle }) {
         />
       )}
 
+      {product.name === "Kampánypóló" && (
+        <div className="mt-4 flex gap-x-4 mx-auto w-fit">
+          {tshirtSizes.map((size) => (
+            <div key={size}>
+              <label htmlFor={size}>{size}</label>
+              <input
+                className="radio-btn ml-2"
+                type="radio"
+                name={size}
+                checked={size == tshirtSize}
+                onClick={handleSizeSelect.bind(null, size)}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {product.name === "Bandana" && (
+        <div className="mt-4 flex gap-x-4 mx-auto w-fit">
+          {bandanaColors.map((color) => (
+            <div key={color}>
+              <label htmlFor={color}>{color}</label>
+              <input
+                className="radio-btn ml-2"
+                type="radio"
+                name={color}
+                checked={color == bandanaColor}
+                onClick={() => setBandanaColor(color)}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {product.name === "Kampánypulcsi" && <div className="h-8"></div>}
+
       <button
-        className="btn mt-10 hover:bg-truegray-300"
+        className="btn mt-10 hover:bg-truegray-400 hover:text-white"
         onClick={handleAddItem}
         ref={buttonRef}
       >
