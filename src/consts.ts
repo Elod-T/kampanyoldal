@@ -42,7 +42,7 @@ export const BUNDLES = [
     name: "Teljes kalóz szett",
     price: 7500,
     contents: ["1", "2", "3"],
-    description: "Póló + pulcsi + ingyenes bandana",
+    description: "Póló + pulcsi - 1000ft kedvezmény",
   },
 ];
 
