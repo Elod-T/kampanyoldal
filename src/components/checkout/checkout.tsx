@@ -23,7 +23,7 @@ export default function Checkout() {
     totalItems,
     updateItemQuantity,
     removeItem,
-    clearCartMetadata,
+    emptyCart,
   } = useCart();
 
   const tshirts = items.filter((item) => item.id === "1")[0]?.quantity ?? 0;
@@ -77,7 +77,7 @@ export default function Checkout() {
 
     setTimeout(() => {
       setButtonText("Rendelés");
-    }, 3000);
+    }, 20000);
   };
 
   const handleCanOrder = () => {
@@ -86,7 +86,7 @@ export default function Checkout() {
 
   const handleOrderFinished = () => {
     setShowConfetti(true);
-    clearCartMetadata();
+    emptyCart();
 
     setTimeout(() => {
       setShowConfetti(false);
