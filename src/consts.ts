@@ -253,4 +253,15 @@ export const CLASSMATES = [
     description: "Az osztályunk hőnszeretett kabalái.",
     image: "/photos/capak.webp",
   },
+  {
+    name: "Sinkó Ákos",
+    description: `"Life's a race be a racist". Az autója km/h-val megy de a sebesség korlát m/s.`,
+    image: "/photos/sinko.webp",
+  },
+  {
+    name: "Ádám László Vilmos",
+    description:
+      "Bármikor felismered ékes magyar tájszólásáról. A kubu fogyasztói társadalom nagy részét ő teszi ki.",
+    image: "/photos/sinko.webp",
+  },
 ];
