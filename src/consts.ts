@@ -36,7 +36,7 @@ export const tshirtSizes: ("S" | "M" | "L" | "XL" | "XXL")[] = [
 ];
 export const tshirtSizeLocalStoreKey = "tshirtSize";
 
-export const bandanaColors: ("fekete" | "piros")[] = ["fekete", "fekete"];
+export const bandanaColors: ("fekete" | "piros")[] = ["fekete"];
 export const bandanaColorLocalStoreKey = "bandanaColor";
 
 export type Bundle = (typeof BUNDLES)[0];
