@@ -262,6 +262,6 @@ export const CLASSMATES = [
     name: "Ádám László Vilmos",
     description:
       "Bármikor felismered ékes magyar tájszólásáról. A kubu fogyasztói társadalom nagy részét ő teszi ki.",
-    image: "/photos/sinko.webp",
+    image: "/photos/laci.webp",
   },
 ];
