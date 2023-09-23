@@ -170,6 +170,7 @@ export default function Checkout() {
               Név
             </label>
             <input
+              disabled
               required
               className="w-40 px-3 py-2 bg-transparent outline-none border focus:border-brand-red shadow-sm rounded-lg"
               type="text"
@@ -181,6 +182,7 @@ export default function Checkout() {
               Osztály
             </label>
             <input
+              disabled
               required
               className="w-40 px-3 py-2 bg-transparent outline-none border focus:border-brand-red shadow-sm rounded-lg"
               type="text"
@@ -225,6 +227,7 @@ export default function Checkout() {
 
           <div onClick={handleCanOrder}>
             <input
+              disabled
               type="checkbox"
               className="mt-10"
               checked={canOrder}
@@ -238,7 +241,7 @@ export default function Checkout() {
 
           <button
             type="submit"
-            disabled={!canOrder}
+            disabled={true}
             className="btn btn-red font-inter mt-5"
             onClick={handleOrderFinished}
           >
